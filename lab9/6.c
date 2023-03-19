@@ -10,7 +10,7 @@ void main(){
     scanf("%d", &len);
     struct DayData data[len];
     for(int i=0; i<len; i++){
-        printf("\nEnter temperature, rainfall for day%d: ", i);
+        printf("\nEnter temperature, rainfall for day%d: ", i+1);
         scanf("%f %f",&data[i].temp, &data[i].rainfall);
         avg_t+=data[i].temp;
         avg_r+=data[i].rainfall;

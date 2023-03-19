@@ -1,40 +1,29 @@
 #include <stdio.h>
 
-void extreme(int *a,int q);
+void extreme(int* largest, int* smallest, int* p, int s);
 
 void main(){
-    int y=3,b=10;
-    int x[b];
-    int *p=&x[0];
-    printf("Enter 10 integers: ");
-    for(int i=0; i<b; i++){
-        scanf("%d", &x[i]);
+    int size;
+    printf("Enter the size of array: ");
+    scanf("%d", &size);
+    int arr[size];
+    printf("Enter the numbers\n");
+    for(int i=0; i<size; i++){
+        scanf("%d", &arr[i]);
     }
-    extreme(p, b);
+    int num1=arr[0], num2=arr[0];
+    int *n1=&num1, *n2=&num2, *n3=&arr[0];
+    extreme(n1, n2, n3, size);
+    printf("Largest is %d, smallest is %d\n", num1, num2);
 }
 
-void extreme(int *a, int q){
-    int size=q;
-    int temp=*a;
-    int arr[size];
-    int num;
-    
-    printf("Given array is \n");
-    for(int i=0; i<size; i++){
-        printf("%d ",*(a +i));
-    }
-    printf("\n");
-    for(int i=0; i<q; i++){
-        arr[i]=*(a+i);
-    }
-    for(int i=0; i<size; i++){
-        for(int j=0; j<size-1; j++){
-            if(arr[j+1]<=arr[j]){
-                num=arr[j];
-                arr[j]=arr[j+1];
-                arr[j+1]=num;
-            }
+void extreme(int* largest, int* smallest, int* p, int s){
+    for(int i=0; i<s; i++){
+        if(*largest<*(p+i)){
+            *largest=*(p+i);
+        }
+        if(*smallest>*(p+i)){
+            *smallest=*(p+i);
         }
     }
-    printf("%d is min, %d is max\n", arr[0], arr[size-1]);
 }

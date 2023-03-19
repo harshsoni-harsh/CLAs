@@ -7,13 +7,16 @@ void main(){
         char dept[10];
         int salary;
     };
-    struct Employee emp[2];
-    for(int i=0; i<2; i++){
+    int size;
+    printf("Enter the number of employees: ");
+    scanf("%d", &size);
+    struct Employee emp[size];
+    for(int i=0; i<size; i++){
         printf("Enter the name, ID, department, salary for emp%d\n", i);
         scanf("%s %d %s %d", emp[i].name, &emp[i].ID, emp[i].dept, &emp[i].salary);
     }
     printf("Employees\t name\t\t ID\t\t department\t\t salary\t\t\n");
-    for(int i=0; i<2; i++){
+    for(int i=0; i<size; i++){
         printf("Employee%d\t %s\t\t %d\t\t %s\t\t         %d\t\t\n", i, emp[i].name, emp[i].ID, emp[i].dept, emp[i].salary);
     }
 }
