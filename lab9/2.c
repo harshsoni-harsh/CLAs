@@ -9,6 +9,7 @@ void main(){
     scanf("%s", a);
     char *p=a;
     rev(p);
+    printf("Reversed string is: %s\n", p);
 }
 
 void rev(char *str){
@@ -16,5 +17,5 @@ void rev(char *str){
     for(int i=strlen(str)-1, j=0; j<strlen(str); j++, i--){
         x[j]=str[i];
     }
-    printf("%s\n", x);
+    strcpy(str,x);
 }
