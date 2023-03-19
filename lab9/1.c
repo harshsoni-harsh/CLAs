@@ -17,5 +17,4 @@ void swap(int *a, int *b){
     int temp=*a;
     *a=*b;
     *b=temp;
-    printf("After swapping values are: %d %d ", *a,*b);
 }
