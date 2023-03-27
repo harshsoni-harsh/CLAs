@@ -10,8 +10,11 @@ void add_book();
 int display_books();
 
 void main(){
-    while(1){
-        char status[4];
+    int size;
+    printf("Enter the size of your library: ");
+    struct book books[size];
+    char status[4];
+    while(status[0]!='e'){
         printf("\nType add to add a new book, or type exit to exit the program\n");
         scanf("%s", status);
         if(status[0]=='e'){
@@ -24,14 +27,20 @@ void main(){
 }
 
 void add_book(){
-    FILE *fp;
-    fp=fopen("book.txt", "a");
-    struct book book1;
     printf("\nEnter the title, author, year_published of the book\n");
-    fprintf(fp,"%s %s %d", book1.title, book1.author, book1.year_published);
-    fclose(fp);
+    scanf("%s %s %d", book1.title, book1.author, &book1.year_published);
 }
 int display_books(){
+    FILE *fp;
+    fp=fopen("book.txt", "a");
+    for(int i=0; i<size; i++){
+        
+    }
+    struct book book1;
+    printf("\nEnter the title, author, year_published of the book\n");
+    scanf("%s %s %d", book1.title, book1.author, &book1.year_published);
+    fprintf(fp,"%s %s %d\n", book1.title, book1.author, book1.year_published);
+    fclose(fp);
     char c;
     FILE *fp1;
     fp1=fopen("book.txt", "r");
@@ -42,6 +51,7 @@ int display_books(){
     while((c=getc(fp1))!=EOF){
         printf("%c",c);
     }
+    printf("\n");
     fclose(fp1);
     return 0;
 }
