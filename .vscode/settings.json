@@ -4,6 +4,10 @@
         "*.tcc": "c",
         "cstdio": "c",
         "string_view": "c",
-        "functional": "c"
-    }
+        "functional": "c",
+        "cstdlib": "c",
+        "memory": "c",
+        "new": "c"
+    },
+    "cmake.sourceDirectory": "${workspaceFolder}/others"
 }
