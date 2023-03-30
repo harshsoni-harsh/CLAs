@@ -31,6 +31,8 @@ void main(){
 }
 
 void add_books(){
+    FILE *fp;
+    fp=fopen("books.txt", "w");
     printf("Enter the book's title: ");
     scanf("%s", book[a].title);
     printf("Enter the author's name: ");
@@ -38,14 +40,16 @@ void add_books(){
     printf("Enter the publication year: ");
     scanf("%d", &book[a].year_published);
     printf("\n");
+    fprintf(fp, "%s %s %d\n", book[a].title, book[a].author, book[a].year_published);
     a++;
 }
 void display_books(){
     FILE *fp;
-    fp=fopen("books.txt", "w");
-    for(int x=0; x<a; x++){
-        fprintf(fp, "%s %s %d\n", book[x].title, book[x].author, book[x].year_published);
-        printf("%s %s %d\n", book[x].title, book[x].author, book[x].year_published);
+    fp=fopen("books.txt", "r");
+    char ch;
+    while (fscanf(fp, "%c", &ch) == 1)
+    {
+        printf("%c", ch);
     }
     fclose(fp);
 }
