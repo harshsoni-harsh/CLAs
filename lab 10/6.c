@@ -8,7 +8,7 @@ void main(){
     char st[100];
     printf("Enter the string: ");
     scanf("%[^\n]s", st);
-    printf("Reversed string is: %s\n", st);
+    printf("Original string is: %s\n", st);
     rev(st);
     printf("Reversed string is: %s\n", st);
 }
