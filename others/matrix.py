@@ -73,3 +73,19 @@ while(operation[0] != "-1"):
         query(m, operation[1], operation[2])
     else:
         continue
+'''
+not running for 
+3
+1 2 3
+4 5 6
+7 8 9
+Q 2 1
+R 450
+Q 2 1
+U 1 2 10
+Q 2 1
+R 90
+U 0 1 3
+Q 0 0
+-1
+'''
