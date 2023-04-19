@@ -6,32 +6,23 @@ def rotate(m, times):
             temp1.append(j)
         temp.append(temp1)
     
-    i=len(m)
-    j=len(m[0])
+    i=len(m)-1
+    j=len(m[0])-1
     times = int(int(times)/90)
     times%=4
-    for time in range(times):
-        for a in range(i):
-            for b in range(j):
-                if(a==int(i/2) and b==int(j/2)):
-                    temp[a][b]=m[a][b]
-                elif(b!=(j-1) and a!=(i-1)):
-                    temp[a][b+1]=m[a][b]
-                elif(b==(j-1) and a!=(i-1)):
-                    temp[a+1][b]=m[a][b]
-                elif(b!=(j-1) and a==(i-1)):
-                    temp[a-1][b]=m[a][b]
-                else:
-                    temp[a][b-1]=m[a][b]
-        m=[]
-        for items in temp:
-            temp1=[]
-            for item in items:
-                temp1.append(item)
-            m.append(temp1)
-    return temp
-                
-                
+    if(times==1):
+        for a in range(i+1):
+            for b in range(j+1):
+                temp[a][b] = m[j-b][a]
+    elif(times==2):
+        for a in range(i+1):
+            for b in range(j+1):
+                temp[a][b] = m[i-a][j-b]
+    elif(times==3):
+        for a in range(i+1):
+            for b in range(j+1):
+                temp[i-a][j-b] = m[j-b][a]
+    return temp            
 
 def update(m, i, j, new):
     m[int(i)][int(j)] = int(new)
@@ -62,7 +53,6 @@ while(operation[0] != "-1"):
     elif(operation[0]=='U'):
         m = update(initial, operation[1], operation[2], operation[3])
         m = rotate(m, rotation)
-        rotation=0
         initial=[]
         for items in initial_2:
             temp1=[]
@@ -71,21 +61,3 @@ while(operation[0] != "-1"):
             initial.append(temp1)
     elif(operation[0]=='Q'):
         query(m, operation[1], operation[2])
-    else:
-        continue
-'''
-not running for 
-3
-1 2 3
-4 5 6
-7 8 9
-Q 2 1
-R 450
-Q 2 1
-U 1 2 10
-Q 2 1
-R 90
-U 0 1 3
-Q 0 0
--1
-'''
