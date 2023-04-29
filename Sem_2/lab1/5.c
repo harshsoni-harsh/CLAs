@@ -75,6 +75,8 @@ void read_and_sort(struct stack *s1, struct stack *s2)
             push(s1, d);
         }
     }
+    printf("Sorted numbers: \n"); 
+    printf("%d %d %d %d %d\n", pop(s1), pop(s1), pop(s1), pop(s1), pop(s1));
 }
 void main()
 {
@@ -88,7 +90,8 @@ void main()
     stack2->arr = (int *)malloc(stack2->size * sizeof(int));
 
     read_and_sort(stack1, stack2);
-    display(stack1);
     free(stack1->arr);
     free(stack2->arr);
+    free(stack1);
+    free(stack2);
 }

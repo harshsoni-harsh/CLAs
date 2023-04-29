@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define Max_size 100
+#define Max_size 10
 
 int top = -1;
 int stack[Max_size];
@@ -27,7 +27,7 @@ int pop(){
     return x;
 }
 int peek(){
-    if(!isEmpty){
+    if(!isEmpty()){
         return stack[top];
     }
     return 0;

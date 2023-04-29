@@ -39,9 +39,11 @@ void ispal(char *x){
             return;
         }
     }
-    printf("String is palindrome\n");
+    printf("String is a palindrome\n");
 }
 int main(){
-    char x[]="abcba";
+    char x[100];
+    printf("Enter the string: ");
+    scanf("%s", x);
     ispal(x);
 }
