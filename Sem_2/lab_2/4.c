@@ -15,13 +15,16 @@ void main()
     reverse(string);
     for (int i=0; string[i]!='\0'; i++)
     {
-        int c=0;
+        char x[20];
+        int index=0;
+        int k=i;
         while(string[i]!=' ' && isdigit(string[i]) && string[i]!='\n')
+            x[index++]=string[i++];
+        if(isdigit(string[k]))
         {
-            c=string[i++]-'0' + c*10;
-        }
-        if(c!=0)
-        {
+            x[index]='\0';
+            reverse(x);
+            int c=atoi(x);
             push(symbol, c);
         }
         else if((string[i])=='0' || string[i]==' ')
@@ -54,9 +57,6 @@ void main()
                         break;
                     case '%':
                         calc=b%a;
-                        break;
-                    case '^':
-                        calc=(int)pow((double)b,(double)a);
                         break;
                     default:
                         break;
