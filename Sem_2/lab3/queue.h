@@ -58,13 +58,15 @@ void display(struct queue *q)
     int temp=q->front;
     printf("\nPrinting Queue...\n");
     if(q->front == -1)
+    {
         printf("\n\n");
         return;
+    }
     while(temp <= q->rear)
     {
         printf("%d  ", q->arr[temp++]);
     }
-    printf("Front: %d Rear: %d", q->front, q->rear);
+    printf("\nFront: %d Rear: %d", q->front, q->rear);
     printf("\n\n");
 }
 void c_enqueue(struct c_queue *q, int data)
@@ -94,10 +96,10 @@ void c_display(struct c_queue *q)
     int temp=q->counter;
     int head=q->front;
     printf("\nPrinting Queue...\n");
-    printf("counter: %d\n", q->counter);
+    // printf("counter: %d\n", q->counter);
     if(temp==0)
     {
-        printf("Front: %d Rear: %d", q->front, q->rear);
+        // printf("Front: %d Rear: %d", q->front, q->rear);
         printf("\n\n");
         return;
     }
@@ -108,7 +110,7 @@ void c_display(struct c_queue *q)
         head%=(q->size);
         temp--;
     }
-    printf("Front: %d Rear: %d", q->front, q->rear);
+    // printf("Front: %d Rear: %d", q->front, q->rear);
     printf("\n\n");
 }
 void c_enqueue2(struct c_queue2 *q, int data)
@@ -129,12 +131,8 @@ void c_enqueue2(struct c_queue2 *q, int data)
 }
 int c_dequeue2(struct c_queue2 *q)
 {
-    if(q->front != q->rear)
-    {
-        return q->arr[q->front++];
-    }
-    printf("Queue is empty\n");
-    return 0;
+    if(q->front != q->rear)        return q->arr[q->front++];
+    printf("Queue is empty\n");    return 0;
 }
 void c_display2(struct c_queue2 *q)
 {
@@ -142,18 +140,14 @@ void c_display2(struct c_queue2 *q)
     printf("\nPrinting Queue...\n");
     if(head==-1)
     {
-        printf("Front: %d Rear: %d", q->front, q->rear);
+        // printf("Front: %d Rear: %d", q->front, q->rear);
         printf("\n\n");
         return;
     }
     while(head != q->rear)
     {
         printf("%d  ", q->arr[++head]);
-        if(head>=q->size)
-        {
-            head-=q->size;
-        }
+        if(head>=q->size)   head-=q->size;
     }
-    printf("Front: %d Rear: %d", q->front, q->rear);
-    printf("\n\n");
+    // printf("Front: %d Rear: %d\n\n", q->front, q->rear);
 }
