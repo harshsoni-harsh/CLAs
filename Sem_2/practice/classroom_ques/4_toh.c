@@ -1,5 +1,9 @@
+/////////////
+///Not Done//
+/////////////
+
 #include <stdio.h>
-#include "stacks.h"
+#include "../c_libraries/stacks.h"
 #include <time.h>
 
 stack maint, target, buffer, buffer_2;
@@ -33,9 +37,9 @@ void toh(stack *mant, stack *targt, stack *buffr, stack *buffr_2, int disk)
     }
     Sleep(20);
     toh(mant, buffr, buffr_2, targt, disk - 2);
-    toh(mant, buffr, targt, disk - 2);
+    toh(mant, buffr, targt, buffr_2, disk - 2);
     push(targt, pop(mant));
-    toh(buffr, targt, mant, disk - 2);
+    toh(buffr, targt, mant, buffr_2, disk - 2);
     return;
 }
 
@@ -72,7 +76,7 @@ int main()
         push(&maint, i);
     }
     printf("\033[s");
-    toh(&maint, &target, &buffer, n);
+    toh(&maint, &target, &buffer , n);
     //displayto();
     end_time = clock(); 
     printf("TIME = %lf", (double)(end_time - start_time) / (CLOCKS_PER_SEC) );

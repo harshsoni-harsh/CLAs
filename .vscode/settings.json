@@ -1,13 +1,13 @@
 {
     "files.associations": {
-        "p4 copy": "c",
         "*.tcc": "c",
         "cstdio": "c",
         "string_view": "c",
         "functional": "c",
         "cstdlib": "c",
         "memory": "c",
-        "new": "c"
+        "new": "c",
+        "time.h": "c"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/others"
 }

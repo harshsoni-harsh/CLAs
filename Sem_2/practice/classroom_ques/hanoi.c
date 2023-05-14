@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "stacks.h"
+#include "../c_libraries/stacks.h"
 #include <time.h>
 
 stack maint, target, buffer;

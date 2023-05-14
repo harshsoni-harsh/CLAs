@@ -5,9 +5,8 @@
 
 typedef struct stacks
 {
-    int arr[MAX];
+    int *arr;
     int top;
-    int bot;
     int max;
 }
 stack;
