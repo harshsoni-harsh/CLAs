@@ -7,16 +7,25 @@ typedef struct node
     struct node* next;
 }node;
 
+node* initializeList();
 node* insertAtFirst(node* head, int data);
 node* insertAtEnd(node* head, int data);
 node* deleteAtFirst(node *head);
 node* deleteAtEnd(node *head);
 node* traverse(node *head);
+int search(node *head, int data);
 void is_list_exists(node *head);
 
+node* initializeList()
+{
+    node* stack = (node*)malloc(sizeof(node));
+    stack->data = 0;
+    stack->next = NULL;
+    return stack;
+}
 void is_list_exists(node *head)
 {
-    if (head != NULL)
+    if (head == NULL)
     {
         printf("Doesn't exists!\n");
         exit(1);
@@ -83,4 +92,21 @@ node* traverse(node *head)
     }
     printf("\n");
     return head;
+}
+int search(node *head, int data)
+{
+    is_list_exists(head);
+    node *ptr=head->next;
+    int counter=0;
+    while(ptr!=NULL)
+    {
+        if(ptr->data == data)
+        {
+            return counter;
+        }
+        counter++;
+        ptr = ptr->next;
+    }
+    printf("Data not found!\n");
+    return -1;
 }
