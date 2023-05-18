@@ -10,6 +10,7 @@ typedef struct node
 node* initializeList();
 node* insertAtFirst(node* head, int data);
 node* insertAtEnd(node* head, int data);
+node* insertAtIndex(node* head, int data, int index);
 node* deleteAtFirst(node *head);
 node* deleteAtEnd(node *head);
 node* traverse(node *head);
@@ -52,6 +53,24 @@ node* insertAtEnd(node* head, int data)
     head->next = ptr;
     ptr->data = data;
     ptr->next = NULL;
+    return start;
+}
+node* insertAtIndex(node* head, int data, int index)
+{
+    node* start=head;
+    int counter=1;
+    node* new1 = initializeList();
+    new1->data = data;
+    while(head->next!=NULL)
+    {
+        if(counter==index)
+            break;
+        counter++;
+        head = head->next;
+    }
+    node* temp=head->next;
+    head->next = new1;
+    new1->next = temp;
     return start;
 }
 node* deleteAtFirst(node *head)
