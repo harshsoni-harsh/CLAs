@@ -31,22 +31,6 @@ void main()
         dummy->next=book1;
         dummy=dummy->next;
     }
-    char search[20];
-    int found=0;
-    printf("\nEnter Book title to search: ");
-    scanf("%s", search);
-    books* tr=start;
-    printf("\nSearching books...\n");
-    for (int i=0; i<number; i++)
-    {
-        tr=tr->next;
-        if(strcmp(tr->title, search) == 0)
-        {
-            printf("\nTitle: %s\n", tr->title);
-            printf("author: %s\n", tr->author);
-            printf("publication year: %d\n", tr->publication_year);
-        }
-    }
     books* roam=start;
     printf("\nPrinting books...\n");
     for (int i=0; i<number; i++)
