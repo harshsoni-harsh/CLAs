@@ -24,7 +24,6 @@ void main()
     q1->rear = -1;
     q1->size = count;
     int counter=0, avg=0, d=0;
-    char out[count];
     while(count>counter)
     {
         printf("Enter burst time for process %d\n", ++counter);
@@ -36,7 +35,6 @@ void main()
     {
         d=dequeue(q1);
         avg+=d;
-        strcat(out, d);
     }
     printf("Average waiting time: %dms\n", (int)avg/count);
     free(q1->arr);
