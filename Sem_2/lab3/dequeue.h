@@ -32,7 +32,7 @@ void insert_front(struct dequeue *q, int data)
 }
 int delete_front(struct dequeue *q)
 {
-    if(q->front > q->rear)
+    if(q->front > q->rear || q->front==-1)
     {
         printf("Queue is empty\n\n");
         return 0;
@@ -48,7 +48,7 @@ int delete_front(struct dequeue *q)
 }
 int delete_rear(struct dequeue *q)
 {
-    if(q->rear < q->front)
+    if(q->rear < q->front || q->front==-1)
     {
         printf("Queue is empty\n\n");
         return 0;

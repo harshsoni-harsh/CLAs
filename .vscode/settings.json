@@ -7,7 +7,9 @@
         "cstdlib": "c",
         "memory": "c",
         "new": "c",
-        "time.h": "c"
+        "time.h": "c",
+        "stacks.h": "c"
     },
-    "cmake.sourceDirectory": "${workspaceFolder}/others"
+    "cmake.sourceDirectory": "${workspaceFolder}/others",
+    "cmake.configureOnOpen": false
 }

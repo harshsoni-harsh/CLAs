@@ -32,7 +32,7 @@ void enqueue(struct queue *q, int data)
         {
             q->front = 0;   
         }
-        q->arr[(++q->rear)%q->size] = data;
+        q->arr[(++q->rear)] = data;
     }
     else
     {
@@ -44,11 +44,11 @@ int dequeue(struct queue *q)
     if(q->rear==q->front)
     {
         q->front=-1;
-        return q->arr[--q->rear];
+        return q->arr[q->front++];
     }
     else if(q->rear > q->front)
     {
-        return q->arr[--q->rear];
+        return q->arr[q->front++];
     }
     printf("Queue is empty\n");
     return 0;
@@ -118,11 +118,10 @@ void c_enqueue2(struct c_queue2 *q, int data)
     if(q->front==-1)
     {
         q->front=0;
-        ++q->rear;
     }
     if(q->front <= q->rear)
     {
-        q->arr[++q->rear] = data;
+        q->arr[(++q->rear)%(q->size)] = data;
     }
     else
     {
@@ -131,7 +130,7 @@ void c_enqueue2(struct c_queue2 *q, int data)
 }
 int c_dequeue2(struct c_queue2 *q)
 {
-    if(q->front != q->rear)        return q->arr[q->front++];
+    if(q->front != q->rear)        return q->arr[(q->front++)%(q->size)];
     printf("Queue is empty\n");    return 0;
 }
 void c_display2(struct c_queue2 *q)

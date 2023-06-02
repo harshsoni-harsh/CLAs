@@ -29,7 +29,7 @@ void main()
                 pop(operator);
             }
             pop(operator);
-        }
+        }                          
     }
     int n=0;
     while(!isEmpty(operator))

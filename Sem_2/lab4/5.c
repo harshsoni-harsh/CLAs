@@ -12,6 +12,7 @@ typedef struct queue
 } queue;
 void enqueue(queue *q, int data);
 int dequeue(queue *q);
+void display(queue *q);
 
 void main()
 {
@@ -36,7 +37,8 @@ void main()
         d=dequeue(q1);
         avg+=d;
     }
-    printf("Average waiting time: %dms\n", (int)avg/count);
+    printf("%d %d\n", avg, count);
+    printf("Average waiting time: %0.1fms\n", avg/(count*1.0));
     free(q1->arr);
     free(q1);
 }
@@ -61,12 +63,12 @@ int dequeue(queue *q)
 {
     if(q->rear==q->front)
     {
-        q->front=-1;
-        return q->arr[--q->rear];
+        q->rear=-1;
+        return q->arr[q->front++];
     }
     else if(q->rear > q->front)
     {
-        return q->arr[--q->rear];
+        return q->arr[q->front++];
     }
     printf("Queue is empty\n");
     return 0;
