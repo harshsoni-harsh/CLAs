@@ -30,7 +30,7 @@ void circular_deletable(node* head)
 {
     if(head->next == head)
     {
-        printf("You can't circular_delete an empty list\n");
+        printf("You can't delete an empty circular list\n");
         return;
     }
 }
@@ -147,14 +147,7 @@ void circular_sort_and_print_asc(node* head)
         temp = temp->next;
     }
 
-    node* ptr = head->next;
-    printf("Printing List...\n");
-    while(ptr != head)
-    {
-        printf("%d -> ", ptr->data);
-        ptr = ptr->next;
-    }
-    printf("NULL\n\n");
+    circular_traverse(head);
 }
 void circular_sort_and_print_desc(node* head)
 {
@@ -178,12 +171,5 @@ void circular_sort_and_print_desc(node* head)
         temp = temp->next;
     }
 
-    node* ptr = head->next;
-    printf("Printing List...\n");
-    while(ptr != head)
-    {
-        printf("%d -> ", ptr->data);
-        ptr = ptr->next;
-    }
-    printf("NULL\n\n");
+    circular_traverse(head);
 }

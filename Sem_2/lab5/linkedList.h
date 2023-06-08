@@ -50,6 +50,7 @@ void insert_node_pos(node* head, int data, int position)
     if(position==0)
     {
         insert_node_begin(head, data);
+        return;
     }
     node* temp = (node*)malloc(sizeof(node));
     temp->data = data;
@@ -107,9 +108,9 @@ void delete_node_pos(node* head, int position)
         free(ptr2);
         ptr->next = NULL;
     }
-    else if(ptr->next != NULL)
+    else if(ptr->next == NULL)
     {
-        free(ptr);
+        printf("List is already empty\n");
     }
     else 
     {
@@ -151,15 +152,7 @@ void sort_and_print_asc(node* head)
         temp = temp->next;
     }
 
-
-    node* ptr = head->next;
-    printf("Printing List...\n");
-    while(ptr != NULL)
-    {
-        printf("%d -> ", ptr->data);
-        ptr = ptr->next;
-    }
-    printf("NULL\n\n");
+    traverse(head);
 }
 void sort_and_print_desc(node* head)
 {
@@ -183,14 +176,7 @@ void sort_and_print_desc(node* head)
         temp = temp->next;
     }
 
-    node* ptr = head->next;
-    printf("Printing List...\n");
-    while(ptr != NULL)
-    {
-        printf("%d -> ", ptr->data);
-        ptr = ptr->next;
-    }
-    printf("NULL\n\n");
+    traverse(head);
 }
 void search(node* head, int data)
 {

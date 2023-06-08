@@ -12,25 +12,20 @@ void main()
     int d=0;
     while(counter<num)
     {
-        scanf("%d", &d);
-        arr[counter]=d;
-        counter++;
+        scanf("%d", &arr[counter++]);
     }
-    int search, found=counter;
+    int search, found=-1;
     printf("\nEnter any number to search: ");
     scanf("%d", &search);
-    while(counter>0)
+    while(found<counter)
     {
-        if(arr[counter--]==search)
+        if(arr[++found]==search)
         {
-            break;
+            free(arr);
+            printf("Found %d at index %d\n", search, found);
+            return;
         }
     }
     free(arr);
-    if(counter)
-    {
-        printf("Found %d at index %d\n", search, num-counter-1);
-        return;
-    }
     printf("Not found\n");
 }

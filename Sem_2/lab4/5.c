@@ -37,7 +37,7 @@ void main()
         d=dequeue(q1);
         avg+=d;
     }
-    printf("%d %d\n", avg, count);
+    // printf("%d %d\n", avg, count);
     printf("Average waiting time: %0.1fms\n", avg/(count*1.0));
     free(q1->arr);
     free(q1);

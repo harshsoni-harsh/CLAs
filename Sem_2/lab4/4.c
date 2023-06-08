@@ -13,8 +13,7 @@ void main()
     while(counter<num)
     {
         scanf("%d", &d);
-        arr[counter]=d;
-        counter++;
+        arr[counter++]=d;
     }
     int search;
     printf("\nEnter any number to search: ");
@@ -42,6 +41,7 @@ void main()
     if(found)
     {
         printf("Found %d at index %d\n", search, mid);
+        free(arr);
         return;
     }
     printf("Not found\n");
