@@ -55,7 +55,7 @@ void delete_node_end(node* head)
     else
     {
         free(ptr2);
-        ptr->next==NULL;
+        ptr->next=NULL;
     }
 }
 void delete_node_pos(node* head, int position)
