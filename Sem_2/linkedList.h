@@ -70,29 +70,21 @@ void insert_node_pos(node* head, int data, int position)
 void delete_node_begin(node* head)
 {
     node* ptr = head->next;
-    free(head);
-    head = ptr;
+    head->next= ptr->next;
+    free(ptr);
 }
 void delete_node_end(node* head)
-{
-    node* ptr = head;
-    node* ptr2 = head->next;
+{if((head->next)!=NULL){
+    node* ptr = head->next;
+    node* ptr2 = head->next->next;
     while(ptr->next!=NULL && ptr2->next!=NULL)
     {
         ptr = ptr->next;
         ptr2 = ptr2->next;
     }
-    if(ptr2==NULL)
-    {
-        free(ptr);
-        head = NULL;
-    }
-    else
-    {
-        free(ptr2);
-        ptr->next==NULL;
-    }
-}
+    free(ptr2);
+    ptr->next=NULL;
+}}
 void delete_node_pos(node* head, int position)
 {
     node* ptr = head;
