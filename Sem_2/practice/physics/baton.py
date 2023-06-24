@@ -51,13 +51,8 @@ class Baton:
             xc = self.getXc(t)
             yc = self.getYc(t)
             
-            subplot(131)
             plot([xao, xa], [yao, ya], '-or')
-            
-            subplot(132)
             plot([xbo, xb], [ybo, yb], '-ob')
-
-            subplot(133)
             plot([xa, xb], [ya, yb], 'm')
             plot([xco, xc], [yco, yc], 'k')
 
@@ -69,11 +64,8 @@ class Baton:
             yco=yc
             t+=0.02
             count+=1
-    def start_animation(self):
-        fig = figure()
-        anim = FuncAnimation(fig, self.position(), frames=100, interval=2)
         show()
 
         
 mybaton = Baton(0.5,0.5,15.0,45.0,2.5,22.0)
-mybaton.start_animation()
+mybaton.position()
