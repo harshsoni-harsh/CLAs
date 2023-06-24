@@ -1,0 +1,1 @@
+avr-gcc -g -mmcu=atmega328p -o main.elf $1; simavr -g -m atmega328p main.elf
