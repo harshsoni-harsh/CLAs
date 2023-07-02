@@ -1,4 +1,4 @@
-#include "doublyLL.h"
+#include "../doublyLL.h"
 
 typedef struct stack
 {

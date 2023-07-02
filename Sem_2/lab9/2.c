@@ -43,19 +43,19 @@ phonebookEntry* delete(phonebookEntry** head, char* name)
     if(*head == NULL) return NULL;
     else if(strcmp(name, (*head)->name) > 0)
     {
-        printf("\nGoing right\n");
+        // printf("\nGoing right\n");
         (*head)->right = delete(&((*head)->right), name);
         return *head;
     }
     else if(strcmp(name, (*head)->name) < 0)
     {
-        printf("\nGoing left\n");
+        // printf("\nGoing left\n");
         (*head)->left = delete(&((*head)->left), name);
         return *head;
     }
     else
     {
-        printf("\nname found\n");
+        // printf("\nname found\n");
         if((*head)->left == NULL && (*head)->right == NULL)
         {
             free(*head);
