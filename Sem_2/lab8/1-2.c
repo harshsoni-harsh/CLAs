@@ -38,18 +38,19 @@ node* delete(node **root, int element)
         printf("Not found\n");
         return NULL;
     }
-    else if((*root)->left && (*root)->right)
-    {
-        node* temp = (*root)->right;
-        (*root)->right->left = (*root)->left;
-        free(*root);
-        return temp;
-    }
     else if((*root)->data == element)
     {
-        free(*root);
-        if(element%2==0)    return (*root)->left;
-        else                return (*root)->right;
+        node* left = (*root)->left;
+        node* right = (*root)->right;
+        if((*root)->left && (*root)->right)
+        {
+            node* temp = (*root)->right;
+            (*root)->right->left = (*root)->left;
+            free(*root);
+            return temp;
+        }
+        else if(element%2==0){free(*root);    return left;}
+        else{free(*root);                return right;}
     }
     else if(element % 2 == 0)
     {
@@ -108,8 +109,8 @@ void postorderTraversal(node *root)
     node *temp = root;
     if (temp == NULL)
         return;
-    inorderTraversal(temp->left);
-    inorderTraversal(temp->right);
+    postorderTraversal(temp->left);
+    postorderTraversal(temp->right);
     printf("-%d-", temp->data);
 }
 void preorderTraversal(node *root)
@@ -118,8 +119,8 @@ void preorderTraversal(node *root)
     if (temp == NULL)
         return;
     printf("-%d-", temp->data);
-    inorderTraversal(temp->left);
-    inorderTraversal(temp->right);
+    preorderTraversal(temp->left);
+    preorderTraversal(temp->right);
 }
 void main()
 {

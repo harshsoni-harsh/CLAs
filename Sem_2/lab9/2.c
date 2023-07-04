@@ -28,11 +28,11 @@ phonebookEntry* insert(phonebookEntry** head, char* name, char* phoneNumber)
         new->right = NULL;
         *head = new;
     }
-    else if(strcmp(name, (*head)->name) > 0 && name != (*head)->name)
+    else if(strcmp(name, (*head)->name) > 0)
     {
         insert(&((*head)->right), name, phoneNumber);
     }
-    else if(name != (*head)->name)
+    else if(strcmp(name, (*head)->name) != 0)
     {
         insert(&((*head)->left), name, phoneNumber);
     }

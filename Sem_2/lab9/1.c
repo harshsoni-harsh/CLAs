@@ -38,19 +38,19 @@ node* delete(node** head, int data)
     if(*head == NULL) return NULL;
     else if(data > (*head)->data)
     {
-        printf("\nGoing right\n");
+        // printf("\nGoing right\n");
         (*head)->right = delete(&((*head)->right), data);
         return *head;
     }
     else if(data < (*head)->data)
     {
-        printf("\nGoing left\n");
+        // printf("\nGoing left\n");
         (*head)->left = delete(&((*head)->left), data);
         return *head;
     }
     else
     {
-        printf("\nData found\n");
+        // printf("\nData found\n");
         if((*head)->left == NULL && (*head)->right == NULL)
         {
             free(*head);

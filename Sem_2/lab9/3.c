@@ -28,11 +28,11 @@ student *insert(student **head, char *name, char grade)
         new->right = NULL;
         *head = new;
     }
-    else if (strcmp(name, (*head)->name) > 0 && name != (*head)->name)
+    else if (strcmp(name, (*head)->name) > 0)
     {
         insert(&((*head)->right), name, grade);
     }
-    else if (name != (*head)->name)
+    else if (strcmp(name, (*head)->name) != 0)
     {
         insert(&((*head)->left), name, grade);
     }
@@ -101,12 +101,12 @@ void display(student **head, student **max, student **min)
     }
     display(&((*head)->left), max, min);
     printf("-  %s:%c  -", (*head)->name, (*head)->grade);
-    if (((*head)->grade > (*min)->grade))
+    if ((*head)->grade > (*min)->grade)
     {
         (*min)->grade = (*head)->grade;
         strcpy((*min)->name, (*head)->name);
     }
-    if (((*head)->grade < (*max)->grade))
+    if ((*head)->grade < (*max)->grade)
     {
         (*max)->grade = (*head)->grade;
         strcpy((*max)->name, (*head)->name);
