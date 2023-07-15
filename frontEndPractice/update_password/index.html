@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update password</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <form id="updatePasswordForm" class="p-auto bg d-flex flex-column justify-content-center">
+        <h3 class="text-white pb-2">Update Password</h3>
+        <div class="pb-2">
+            <label for="newPassword" class="d-block label">New Password</label>
+            <input id="newPassword" class="input" placeholder="Create new password" />
+            <p id="newPasswordErrMsg" class="error"></p>
+        </div>
+        <div class="pb-2">
+            <label for="confirmPassword" class="d-block label">Confirm Password</label>
+            <input id="confirmPassword" class="input" placeholder="Confirm password" />
+            <p id="confirmPasswordErrMsg" class="error"></p>
+        </div>
+        <button id="updateBtn" type="submit" class="btn btn-primary">Update</button>
+    </form>
+</body>
+
+</html>
