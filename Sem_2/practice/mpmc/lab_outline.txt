@@ -1,0 +1,23 @@
+Lab 1
+Question 1
+Write assembly for an array of 10 items stored in program space @ 0x500. Add the items & store the result at 0x200.
+Question 2
+Write an assembly program for an array of 10 items in program space @ 0x500. Sort the array & store sorted array at 0x200 using stack pointer.
+
+Lab 2
+Question 1
+WAP for blinking an LED (@PORTB.5) every 1 second with 50% duty cycle.
+
+Lab 3
+Question 1
+ALP to display numbers 0 to 9 on a 7-segment display.
+
+Lab 4
+Question 1
+ALP to rotate a stepper motor clockwise 135 degrees followed by 67.5 degrees counter-clockwise.
+Question 2
+Rotate stepper motor @ 6 rpm.
+
+Lab 5
+Question 1
+WAP to blink built-in LED on timer 0 overflow use ISR.
