@@ -6,12 +6,10 @@
 main:   ldi r30, lo8(pArr)
         ldi r31, hi8(pArr)
         ldi r16, 0
-        ldi r17, 0
         ldi r18, 0
         ldi r19, 10
 
-l1:     inc r30
-        lpm r16, Z+
+l1:     lpm r16, Z+
         add r18, r16
         dec r19
         brne l1
@@ -19,7 +17,6 @@ l1:     inc r30
         ldi r26, lo8(0x200)
         ldi r27, hi8(0x200)
         st X, r18
-        ldi r25, 0x200
 
 stop:   rjmp stop
 

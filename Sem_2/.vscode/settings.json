@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "**/frontmatter.json": "jsonc",
+        "**/.frontmatter/config/*.json": "jsonc",
+        "string": "cpp",
+        "format": "cpp",
+        "chrono": "c",
+        "random": "c",
+        "limits": "c",
+        "valarray": "c",
+        "algorithm": "c"
+    },
+    "python.analysis.typeCheckingMode": "off",
+    "C_Cpp.errorSquiggles": "disabled"
+}

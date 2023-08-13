@@ -9,7 +9,7 @@ pArr:   .byte 8,4,2,1
 bArr:   .byte 1,2,4,8
 
 .org 0x600
-main:   ldi r16, 240
+main:   ldi r16, 192
         ldi r17, 0xFF
         out _SFR_IO_ADDR(DDRD), r17
 
@@ -23,7 +23,7 @@ l1:     lpm r19, Z+
         brne l1
         dec r16
         brne l2
-        ldi r16, 120
+        ldi r16, 96
 
 l3:     ldi ZL, lo8(bArr)
         ldi ZH, hi8(bArr)
