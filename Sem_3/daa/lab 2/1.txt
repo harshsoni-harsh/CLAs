@@ -1,0 +1,4 @@
+sequential search
+bubble sort
+merge sort
+selection sort

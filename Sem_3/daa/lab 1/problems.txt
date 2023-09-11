@@ -1,0 +1,7 @@
+Solve these programs using iterative method as well as recursively
+
+fibonacci
+factorial
+gcd
+lcm
+print elements of array
