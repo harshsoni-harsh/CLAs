@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 
-int gcd(int a, int b)
+int lcm(int a, int b)
 {
     if(a==b)
     {
@@ -13,7 +13,7 @@ int gcd(int a, int b)
         {
             return b;
         }
-        return gcd((b), a%b);
+        return lcm((b), a%b);
     }
     else
     {
@@ -21,7 +21,7 @@ int gcd(int a, int b)
         {
             return a;
         }
-        return gcd((a), b%a);
+        return lcm((a), b%a);
     }
 }
 void main()
@@ -32,7 +32,7 @@ void main()
     printf("Enter a larger, then a smaller number: ");
     scanf("%d %d", &a, &b);
     start = clock();
-    int g = gcd(a,b);
+    int g = lcm(a,b);
     end = clock();
     printf("\nlcm(%d, %d) =  %d\n", a,b, a*b/g);
 
