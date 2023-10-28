@@ -1,0 +1,55 @@
+/* Styles for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    margin: 0;
+}
+
+/* Styles for subject cards */
+.subject-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subject-card h2 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.subject-card p {
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Styles for sliders and labels */
+.slider-label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Styles for responsiveness */
+@media (max-width: 768px) {
+    .subject-card {
+        width: 90%;
+    }
+}
