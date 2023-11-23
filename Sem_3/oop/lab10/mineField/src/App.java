@@ -2,41 +2,53 @@ import java.util.Random;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.Node;
 
 public class App extends Application {
     static int count = 0;
     public void start(Stage s) {
         BorderPane bp = new BorderPane();
-        TextField tf = new TextField();
-        bp.setTop(tf);
+        Label wel = new Label("< Welcome to the MineField Game >");
+        wel.setFont(Font.font("Arial", 15));
+        Label tf = new Label("");
+        tf.setFont(Font.font("Arial", FontWeight.BOLD, 20));
+        tf.setAlignment(Pos.CENTER);
+        VBox vb = new VBox(wel, tf);
+        vb.setSpacing(15);
+        vb.setAlignment(Pos.CENTER);
+        bp.setTop(vb);
 
         GridPane gp = startGame(tf);
 
         bp.setCenter(gp);
-        bp.setPadding(new Insets(10));
+        bp.setPadding(new Insets(40));
         Scene sc = new Scene(bp);
         s.setScene(sc);
         s.show();
     }
-    public GridPane startGame(TextField tf) {
+    public GridPane startGame(Label tf) {
         GridPane gp = new GridPane();
         Background blue = new Background(new BackgroundFill(Color.BLUE, CornerRadii.EMPTY, Insets.EMPTY));
         Background red = new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY));
         Background white = new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY));
         int width = 40;
-        for (int i=0; i<4; i++) {
-            for (int j=0; j<5; j++) {
+        for (int i=0; i<5; i++) {
+            for (int j=0; j<4; j++) {
                 Button b = new Button();
                 b.setBackground(blue);
                 b.setStyle("-fx-border-color: grey;");
@@ -48,7 +60,7 @@ public class App extends Application {
                 b.setOnAction(e -> {
                     count++;
                     if (count == 10) {
-                        tf.setText("Congratulations");
+                        tf.setText("</ Congratulations You Won!! >");
                     }
                     b.setBackground(white);
                 });
@@ -58,7 +70,7 @@ public class App extends Application {
 
         Random rand = new Random();
         int i = rand.nextInt(4);
-        int j = rand.nextInt(5);
+        int j = rand.nextInt(3);
         for (Node n : gp.getChildren()) {
             if (n instanceof Button) {
                 Button button = (Button) n;
@@ -70,13 +82,16 @@ public class App extends Application {
                             b.setBackground(white);
                         }
                         count = 0;
-                        tf.setText("Failed");
+                        tf.setText("</ You Lose!!! >");
                         button.setBackground(red);
                     });
                 
                 }
             }
         }
+        gp.setMinWidth(300);
+        gp.setMinHeight(300);
+        gp.setAlignment(Pos.CENTER);
         return gp;
     }
     public static void main(String[] args) {
