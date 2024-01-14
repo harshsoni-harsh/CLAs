@@ -72,9 +72,7 @@ _start:
 		cmp r7, #0
 		beq copy
 		lsl r9, #1
-		mov r10, #1
-		lsl r10, #31
-		eor r10, r10, r8
+		mov r10, r8
 		lsr r10, #31
 		add r9, r9, r10
 		sub r7, r7, #1
